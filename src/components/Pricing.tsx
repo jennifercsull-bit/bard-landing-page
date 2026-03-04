@@ -115,12 +115,14 @@ export function Pricing({ onOpenModal }: PricingProps) {
 
               <div className="mb-8 h-[4.5rem] flex items-end">
                 <div>
-                  <span className={`font-serif text-6xl ${tier.featured ? 'text-white' : 'text-forest'}`}>
+                  <span className={`font-serif ${tier.monthlyPrice === 'Free' && !annual ? 'text-5xl' : 'text-6xl'} ${tier.featured ? 'text-white' : 'text-forest'}`}>
                     {annual ? tier.annualPrice : tier.monthlyPrice}
                   </span>
-                  <span className={`text-sm ml-1 ${tier.featured ? 'text-white/50' : 'text-ink-light'}`}>
-                    /month
-                  </span>
+                  {(annual || tier.monthlyPrice !== 'Free') && (
+                    <span className={`text-sm ml-1 ${tier.featured ? 'text-white/50' : 'text-ink-light'}`}>
+                      /month
+                    </span>
+                  )}
                   {annual && tier.annualTotal && (
                     <div className={`text-xs mt-1 ${tier.featured ? 'text-white/50' : 'text-ink-light'}`}>
                       Billed annually ({tier.annualTotal})

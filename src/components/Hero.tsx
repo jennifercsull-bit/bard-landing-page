@@ -59,7 +59,7 @@ export function Hero({ onOpenModal }: HeroProps) {
             <motion.div variants={fadeInUp} className="mb-8">
               <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-sage/60 backdrop-blur-sm rounded-full border border-sage-dark/20">
                 <span className="text-sm text-ink-muted">For</span>
-                <span className="relative inline-flex items-center h-5 overflow-hidden w-[155px] sm:w-[175px]">
+                <span className="relative inline-flex items-center h-5 overflow-hidden w-[170px] sm:w-[185px]">
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={roles[roleIndex]}
@@ -96,7 +96,7 @@ export function Hero({ onOpenModal }: HeroProps) {
               variants={fadeInUp}
               className="text-lg sm:text-xl text-ink-light max-w-lg leading-relaxed mb-10"
             >
-              AI Scribe listens to your sessions and writes therapy-fluent clinical documentation -- so your evenings belong to you, not your EHR.
+              AI Scribe listens to your sessions and writes therapy-fluent clinical documentation so your evenings belong to you, not your EHR.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col items-start">
@@ -132,6 +132,7 @@ export function Hero({ onOpenModal }: HeroProps) {
             >
               <video
                 src="/hero-therapist.mp4"
+                poster="/hero-therapist.png"
                 autoPlay
                 muted
                 loop
@@ -153,6 +154,7 @@ export function Hero({ onOpenModal }: HeroProps) {
           <div className="relative h-64 sm:h-80 overflow-hidden">
             <video
               src="/hero-therapist.mp4"
+              poster="/hero-therapist.png"
               autoPlay
               muted
               loop
@@ -184,7 +186,7 @@ export function Hero({ onOpenModal }: HeroProps) {
                 </div>
               ))}
             </div>
-            <p className="text-center text-ink-muted/30 text-[11px] mt-6 tracking-widest uppercase">
+            <p className="text-center text-ink-muted/50 text-xs mt-6 tracking-widest uppercase">
               Based on SonderMind AI data
             </p>
           </div>

@@ -15,14 +15,12 @@ export function ScrollShowcase() {
     return () => window.removeEventListener('resize', check)
   }, [])
 
-  // Manual scroll progress calculation -- scoped to the container element
+  // Manual scroll progress -- scoped to container
   const updateProgress = useCallback(() => {
     const el = containerRef.current
     if (!el) return
     const rect = el.getBoundingClientRect()
     const vh = window.innerHeight
-    // progress 0 = element top at viewport top
-    // progress 1 = element bottom at viewport bottom
     const scrollRange = rect.height - vh
     const progress = Math.max(0, Math.min(1, -rect.top / scrollRange))
     scrollProgress.set(progress)
@@ -38,16 +36,21 @@ export function ScrollShowcase() {
     }
   }, [updateProgress])
 
-  // Problem slides left and fades out
-  const problemX = useTransform(scrollProgress, [0.15, 0.55], ['0%', '-110%'])
-  const problemOpacity = useTransform(scrollProgress, [0.15, 0.45], [1, 0])
-
-  // Solution slides in from right and fades in
-  const solutionX = useTransform(scrollProgress, [0.45, 0.85], ['110%', '0%'])
-  const solutionOpacity = useTransform(scrollProgress, [0.5, 0.8], [0, 1])
+  // Crossfade: problem holds, fades out around midpoint; solution fades in
+  const problemOpacity = useTransform(scrollProgress, [0.35, 0.50], [1, 0])
+  const solutionOpacity = useTransform(scrollProgress, [0.50, 0.65], [0, 1])
 
   // Background color transitions cream → sage
-  const bgColor = useTransform(scrollProgress, [0.25, 0.65], ['#FAFAFA', '#F0EDFF'])
+  const bgColor = useTransform(scrollProgress, [0.30, 0.70], ['#FAFAFA', '#F0EDFF'])
+
+  // Waveform bridge: appears during the crossover gap
+  const waveOpacity = useTransform(scrollProgress, [0.40, 0.48, 0.52, 0.60], [0, 1, 1, 0])
+  // Waveform sweeps from left to right during transition
+  const waveSweep = useTransform(scrollProgress, [0.40, 0.60], ['0%', '100%'])
+
+  // Label crossfade -- problem label and solution label swap crisply
+  const problemLabelOpacity = useTransform(scrollProgress, [0.44, 0.50], [1, 0])
+  const solutionLabelOpacity = useTransform(scrollProgress, [0.50, 0.56], [0, 1])
 
   // Mobile: stacked panels with fade
   if (!isLargeScreen) {
@@ -67,12 +70,31 @@ export function ScrollShowcase() {
                 The problem
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl text-forest text-center leading-tight mb-4">
-                Documentation shouldn't take longer than the session
+                Documentation takes as long as the session
               </h2>
               <p className="text-base text-ink-light text-center max-w-xl mx-auto mb-8">
                 Therapists spend 1-2 hours every evening catching up on clinical notes. It's the #1 driver of burnout.
               </p>
               <ProblemMockUI />
+            </motion.div>
+
+            {/* Waveform divider */}
+            <motion.div variants={staggerItem} className="flex items-center justify-center gap-3 py-2">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-sage-dark/20" />
+              <div className="flex items-end gap-[2px] h-8">
+                {Array.from({ length: 20 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="w-1 rounded-full"
+                    style={{
+                      height: `${20 + Math.sin(i * 0.5) * 40 + Math.cos(i * 0.3) * 25}%`,
+                      backgroundColor: `rgba(87, 84, 255, ${0.15 + (Math.sin(i * 0.4) * 0.2)})`,
+                      animation: `waveform 1.5s ease-in-out ${(i * 0.1) % 2}s infinite alternate`,
+                    }}
+                  />
+                ))}
+              </div>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-sage-dark/20" />
             </motion.div>
 
             {/* Solution */}
@@ -94,7 +116,7 @@ export function ScrollShowcase() {
     )
   }
 
-  // Desktop: horizontal slide with scroll-driven animation
+  // Desktop: crossfade with waveform bridge (200vh for snappy scroll)
   return (
     <div ref={containerRef} className="relative" style={{ height: '200vh' }}>
       <motion.div
@@ -103,19 +125,36 @@ export function ScrollShowcase() {
       >
         <div className="section-container">
           <div className="relative max-w-5xl mx-auto h-[70vh] flex items-center">
-            {/* Problem -- slides left */}
+
+            {/* Section label -- pinned position, crisp swap */}
+            <div className="absolute top-[2%] left-0 right-0 flex justify-center">
+              <div className="relative h-6">
+                <motion.p
+                  className="absolute inset-0 text-sm font-semibold text-forest/40 uppercase tracking-[0.2em] text-center"
+                  style={{ opacity: problemLabelOpacity }}
+                >
+                  The problem
+                </motion.p>
+                <motion.p
+                  className="absolute inset-0 text-sm font-semibold text-forest/40 uppercase tracking-[0.2em] text-center"
+                  style={{ opacity: solutionLabelOpacity }}
+                >
+                  The solution
+                </motion.p>
+              </div>
+            </div>
+
+            {/* Problem panel -- fades out in place */}
             <motion.div
               className="absolute inset-0 flex flex-col items-center justify-center"
-              style={{
-                x: problemX,
-                opacity: problemOpacity,
-              }}
+              style={{ opacity: problemOpacity }}
             >
-              <p className="text-sm font-semibold text-forest/40 uppercase tracking-[0.2em] mb-5">The problem</p>
+              {/* Spacer for label */}
+              <div className="h-16" />
               <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] text-forest text-center leading-tight mb-6">
-                Documentation shouldn't take
+                Documentation takes as long
                 <br />
-                longer than the session
+                as the session
               </h2>
               <p className="text-lg text-ink-light text-center max-w-xl mb-12">
                 Therapists spend 1-2 hours every evening catching up on clinical notes. It's the #1 driver of burnout.
@@ -123,15 +162,50 @@ export function ScrollShowcase() {
               <ProblemMockUI />
             </motion.div>
 
-            {/* Solution -- slides in from right */}
+            {/* Waveform transition bridge -- appears during crossover */}
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
+              style={{ opacity: waveOpacity }}
+            >
+              <div className="relative w-full max-w-2xl h-16 overflow-hidden">
+                {/* Waveform bars */}
+                <div className="flex items-end gap-[3px] h-full justify-center">
+                  {Array.from({ length: 48 }).map((_, i) => {
+                    const baseHeight = 20 + Math.sin(i * 0.4) * 35 + Math.cos(i * 0.25) * 25
+                    return (
+                      <div
+                        key={i}
+                        className="w-1.5 rounded-full"
+                        style={{
+                          height: `${Math.max(10, baseHeight)}%`,
+                          backgroundColor: `rgba(87, 84, 255, ${0.2 + (baseHeight / 100) * 0.45})`,
+                          animation: `waveform 1.2s ease-in-out ${(i * 0.06) % 1.5}s infinite alternate`,
+                        }}
+                      />
+                    )
+                  })}
+                </div>
+                {/* Sweep mask -- reveals bars left to right */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-current"
+                  style={{
+                    background: 'linear-gradient(to right, transparent, transparent)',
+                    maskImage: 'linear-gradient(to right, black var(--sweep), transparent var(--sweep))',
+                    WebkitMaskImage: 'linear-gradient(to right, black var(--sweep), transparent var(--sweep))',
+                    // @ts-expect-error CSS custom property
+                    '--sweep': waveSweep,
+                  }}
+                />
+              </div>
+            </motion.div>
+
+            {/* Solution panel -- fades in, in place */}
             <motion.div
               className="absolute inset-0 flex flex-col items-center justify-center"
-              style={{
-                x: solutionX,
-                opacity: solutionOpacity,
-              }}
+              style={{ opacity: solutionOpacity }}
             >
-              <p className="text-sm font-semibold text-forest/40 uppercase tracking-[0.2em] mb-5">The solution</p>
+              {/* Spacer for label */}
+              <div className="h-16" />
               <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] text-forest text-center leading-tight mb-6">
                 Your note is ready
                 <br />
@@ -145,14 +219,15 @@ export function ScrollShowcase() {
           </div>
         </div>
       </motion.div>
+
     </div>
   )
 }
 
 function ProblemMockUI() {
   return (
-    <div className="w-full max-w-3xl grid grid-cols-3 gap-4">
-      <div className="col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-sage-dark/10">
+    <div className="w-full max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="sm:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-sage-dark/10">
         <div className="flex items-center gap-2 mb-4">
           <FileWarning size={18} className="text-ink-muted" />
           <span className="text-sm font-medium text-ink-muted">Progress Note - Incomplete</span>
@@ -193,8 +268,8 @@ function ProblemMockUI() {
 
 function SolutionMockUI() {
   return (
-    <div className="w-full max-w-3xl grid grid-cols-3 gap-4">
-      <div className="col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-sage-dark/10">
+    <div className="w-full max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="sm:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-sage-dark/10">
         <div className="flex items-center gap-2 mb-4">
           <FileText size={18} className="text-forest" />
           <span className="text-sm font-medium text-forest">SOAP Note - Complete</span>

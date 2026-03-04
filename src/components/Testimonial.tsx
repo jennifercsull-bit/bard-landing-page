@@ -47,7 +47,7 @@ export function Testimonial() {
               </div>
               <div className="text-left">
                 <div className="text-base font-medium text-white/90">Dr. Rebecca M., LCSW</div>
-                <div className="text-sm text-white/40">SonderMind AI Scribe Pilot &middot; Denver, CO</div>
+                <div className="text-sm text-white/55">SonderMind AI Scribe Pilot &middot; Denver, CO</div>
               </div>
             </div>
           </motion.div>

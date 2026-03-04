@@ -29,7 +29,7 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="relative py-20 lg:py-28 overflow-hidden">
       {/* Warm bg -- strong enough to be visually distinct */}
-      <div className="absolute inset-0 bg-sage/25" />
+      <div className="absolute inset-0 bg-sage/40" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_70%_10%,_rgba(87,84,255,0.04)_0%,_transparent_60%)]" />
 
       <div className="relative z-10 section-container">
@@ -121,7 +121,7 @@ function MockWindow({ title, children }: { title: string; children: React.ReactN
           <div className="w-3 h-3 rounded-full bg-[#FFBD44]" />
           <div className="w-3 h-3 rounded-full bg-[#00CA4E]" />
         </div>
-        <span className="text-xs text-ink-muted ml-3 font-medium">AI Scribe -- {title}</span>
+        <span className="text-xs text-ink-muted ml-3 font-medium">AI Scribe | {title}</span>
       </div>
       <div className="p-5 sm:p-6">{children}</div>
     </motion.div>
@@ -149,12 +149,6 @@ function RecordMock() {
           )
         })}
       </div>
-      <style>{`
-        @keyframes waveform {
-          0% { transform: scaleY(1); }
-          100% { transform: scaleY(0.4); }
-        }
-      `}</style>
       <div className="flex items-center gap-4 mb-2">
         <div className="relative">
           <div className="w-4 h-4 bg-red-500 rounded-full" />
@@ -213,7 +207,7 @@ function ReviewMock() {
       <div className="flex items-center justify-between">
         <div>
           <span className="text-base font-semibold text-forest">SOAP Note</span>
-          <span className="text-xs text-ink-muted ml-2">Session #47 -- March 3, 2026</span>
+          <span className="text-xs text-ink-muted ml-2">Session #47 | March 3, 2026</span>
         </div>
         <span className="text-xs px-3 py-1.5 bg-green-50 text-green-700 rounded-full font-semibold ring-1 ring-green-200">Ready for Review</span>
       </div>

@@ -93,7 +93,7 @@ export function FeaturesGrid() {
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
           variants={staggerContainer}
-          className="grid sm:grid-cols-3 gap-5 max-w-5xl mx-auto auto-rows-[minmax(140px,auto)]"
+          className="grid sm:grid-cols-3 gap-5 max-w-5xl mx-auto auto-rows-auto sm:auto-rows-[minmax(140px,auto)]"
         >
           {features.map((feature, i) => {
             const Icon = feature.icon
@@ -102,7 +102,7 @@ export function FeaturesGrid() {
               <motion.div
                 key={feature.title}
                 variants={staggerItem}
-                className={`group rounded-3xl ${isLarge ? 'p-10' : 'p-7'} bg-white border border-sage-dark/10 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out flex flex-col ${gridPlacement[feature.size]} ${isLarge ? 'bg-gradient-to-br from-white to-sage/20' : ''}`}
+                className={`group rounded-3xl ${isLarge ? 'p-10' : 'p-7'} bg-white border border-sage-dark/10 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out flex flex-col ${gridPlacement[feature.size]} ${isLarge ? 'bg-gradient-to-br from-white to-sage/20' : ''}`}
               >
                 <div className={`${isLarge ? 'w-14 h-14 rounded-2xl' : 'w-12 h-12 rounded-xl'} bg-gradient-to-br ${iconAccents[i]} flex items-center justify-center mb-5 transition-all duration-300`}>
                   <Icon size={isLarge ? 26 : 22} className="text-forest" strokeWidth={1.7} />

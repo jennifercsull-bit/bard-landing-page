@@ -70,7 +70,7 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ duration: 0.3, ease: easeCubic }}
-            className="relative w-full max-w-md bg-white/95 backdrop-blur-2xl rounded-[2rem] shadow-2xl shadow-forest/20 p-10 sm:p-12"
+            className="relative w-full max-w-md bg-white rounded-[2rem] shadow-2xl shadow-forest/20 p-10 sm:p-12"
           >
             {/* Close button */}
             <button
@@ -139,7 +139,7 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                   </div>
                   <button
                     type="submit"
-                    className="group w-full flex items-center justify-center gap-2 px-6 py-4 bg-forest text-white text-base font-semibold rounded-xl hover:bg-forest-light transition-all duration-300 mt-2"
+                    className="group w-full flex items-center justify-center gap-2 px-6 py-4 bg-forest text-white text-base font-semibold rounded-2xl hover:bg-forest-light transition-all duration-300 mt-2"
                   >
                     Join Waitlist
                     <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5" />
