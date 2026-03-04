@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #5754FF;
+  --color-forest-light: #6E6BFF;
+  --color-forest-dark: #111114;
+  --color-sage: #F0EDFF;
+  --color-sage-dark: #D8D1F8;
+  --color-cream: #FAFAFA;
+  --color-cream-warm: #F8F7FF;
+  --color-ink: #1A1A1A;
+  --color-ink-light: #4A4A4A;
+  --color-ink-muted: #6B6B6B;
+  --color-warm: #FFF8F0;
+  --color-warm-accent: #FF8C42;
+  --font-sans: 'Open Sans', system-ui, sans-serif;
+  --font-serif: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  *, *::before, *::after {
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: var(--color-cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .section-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+::selection {
+  background-color: var(--color-sage);
+  color: var(--color-forest);
+}
