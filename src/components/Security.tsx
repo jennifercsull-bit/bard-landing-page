@@ -27,14 +27,18 @@ const items = [
 
 export function Security() {
   return (
-    <section id="security" className="relative py-20 lg:py-28 overflow-hidden">
-      {/* Rich dark gradient instead of flat forest */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a1844] via-forest-dark to-[#0d0d1a]" />
-      {/* Decorative gradient orbs */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_30%_at_20%_30%,_rgba(87,84,255,0.15)_0%,_transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_30%_40%_at_80%_70%,_rgba(87,84,255,0.1)_0%,_transparent_60%)]" />
+    <section id="security" className="relative overflow-hidden">
+      {/* Fade-in strip: light to dark */}
+      <div className="h-24 bg-gradient-to-b from-cream to-[#1a1844]" />
 
-      <div className="relative z-10 section-container">
+      <div className="relative py-20 lg:py-28">
+        {/* Rich dark gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1844] via-forest-dark to-[#0d0d1a]" />
+        {/* Decorative gradient orbs */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_30%_at_20%_30%,_rgba(87,84,255,0.15)_0%,_transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_30%_40%_at_80%_70%,_rgba(87,84,255,0.1)_0%,_transparent_60%)]" />
+
+        <div className="relative z-10 section-container">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -72,7 +76,11 @@ export function Security() {
             )
           })}
         </motion.div>
+        </div>
       </div>
+
+      {/* Fade-out strip: dark to light */}
+      <div className="h-24 bg-gradient-to-b from-[#0d0d1a] to-cream" />
     </section>
   )
 }

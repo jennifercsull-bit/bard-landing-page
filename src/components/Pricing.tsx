@@ -49,13 +49,7 @@ export function Pricing({ onOpenModal }: PricingProps) {
 
   return (
     <section id="pricing" className="relative py-20 lg:py-28 overflow-hidden">
-      {/* Dark gradient background -- bridges into Security section */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1a1844] via-[#151530] to-forest-dark" />
-      {/* Decorative gradient orbs */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_30%_20%,_rgba(87,84,255,0.12)_0%,_transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_80%_80%,_rgba(87,84,255,0.08)_0%,_transparent_60%)]" />
-
-      <div className="relative z-10 section-container">
+      <div className="section-container">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -63,22 +57,22 @@ export function Pricing({ onOpenModal }: PricingProps) {
           variants={fadeInUp}
           className="text-center mb-10"
         >
-          <p className="text-sm font-semibold text-white/25 uppercase tracking-[0.25em] mb-5">Pricing</p>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.2rem] text-white mb-10 leading-tight">
+          <p className="text-sm font-semibold text-forest/40 uppercase tracking-[0.25em] mb-5">Pricing</p>
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.2rem] text-forest mb-10 leading-tight">
             Simple, transparent pricing
           </h2>
 
           {/* Toggle */}
           <div className="inline-flex items-center gap-4">
-            <span className={`text-sm font-medium transition-colors ${!annual ? 'text-white' : 'text-white/40'}`}>Monthly</span>
+            <span className={`text-sm font-medium transition-colors ${!annual ? 'text-forest' : 'text-ink-muted'}`}>Monthly</span>
             <button
               onClick={() => setAnnual(!annual)}
-              className={`relative w-12 h-7 rounded-full transition-colors duration-300 ${annual ? 'bg-forest' : 'bg-white/20'}`}
+              className={`relative w-12 h-7 rounded-full transition-colors duration-300 ${annual ? 'bg-forest' : 'bg-sage-dark/40'}`}
               aria-label="Toggle annual pricing"
             >
               <div className={`absolute top-1 left-1 w-5 h-5 bg-white rounded-full shadow-sm transition-transform duration-300 ${annual ? 'translate-x-5' : 'translate-x-0'}`} />
             </button>
-            <span className={`text-sm font-medium transition-colors ${annual ? 'text-white' : 'text-white/40'}`}>Annual</span>
+            <span className={`text-sm font-medium transition-colors ${annual ? 'text-forest' : 'text-ink-muted'}`}>Annual</span>
             {annual && (
               <span className="text-xs font-semibold bg-gradient-to-r from-forest to-forest-light text-white px-3 py-1 rounded-full">
                 Save $297/year
@@ -101,7 +95,7 @@ export function Pricing({ onOpenModal }: PricingProps) {
               className={`relative rounded-3xl p-10 lg:p-12 flex flex-col ${
                 tier.featured
                   ? 'bg-gradient-to-br from-forest via-forest to-[#4845D9] text-white shadow-[0_30px_80px_-20px_rgba(87,84,255,0.35)]'
-                  : 'bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm'
+                  : 'bg-white shadow-md border border-sage-dark/10'
               }`}
             >
               {tier.featured && (
@@ -112,23 +106,23 @@ export function Pricing({ onOpenModal }: PricingProps) {
                 </div>
               )}
 
-              <h3 className={`text-xl font-semibold mb-2 ${tier.featured ? 'text-white' : 'text-white'}`}>
+              <h3 className={`text-xl font-semibold mb-2 ${tier.featured ? 'text-white' : 'text-forest'}`}>
                 {tier.name}
               </h3>
-              <p className={`text-base mb-8 min-h-[3rem] ${tier.featured ? 'text-sage/50' : 'text-white/45'}`}>
+              <p className={`text-base mb-8 min-h-[3rem] ${tier.featured ? 'text-sage/50' : 'text-ink-muted'}`}>
                 {tier.tagline}
               </p>
 
               <div className="mb-8 h-[4.5rem] flex items-end">
                 <div>
-                  <span className={`font-serif text-6xl ${tier.featured ? 'text-white' : 'text-white'}`}>
+                  <span className={`font-serif text-6xl ${tier.featured ? 'text-white' : 'text-forest'}`}>
                     {annual ? tier.annualPrice : tier.monthlyPrice}
                   </span>
-                  <span className={`text-sm ml-1 ${tier.featured ? 'text-sage/40' : 'text-white/35'}`}>
+                  <span className={`text-sm ml-1 ${tier.featured ? 'text-sage/40' : 'text-ink-light'}`}>
                     /month
                   </span>
                   {annual && tier.annualTotal && (
-                    <div className={`text-xs mt-1 ${tier.featured ? 'text-sage/40' : 'text-white/35'}`}>
+                    <div className={`text-xs mt-1 ${tier.featured ? 'text-sage/40' : 'text-ink-light'}`}>
                       Billed annually ({tier.annualTotal})
                     </div>
                   )}
@@ -152,10 +146,10 @@ export function Pricing({ onOpenModal }: PricingProps) {
                   <li key={feature} className="flex items-start gap-3">
                     <Check
                       size={18}
-                      className={`mt-0.5 flex-shrink-0 ${tier.featured ? 'text-sage/50' : 'text-white/35'}`}
+                      className={`mt-0.5 flex-shrink-0 ${tier.featured ? 'text-sage/50' : 'text-forest/40'}`}
                       strokeWidth={2.5}
                     />
-                    <span className={`text-[15px] ${tier.featured ? 'text-sage/70' : 'text-white/60'}`}>
+                    <span className={`text-[15px] ${tier.featured ? 'text-sage/70' : 'text-ink-light'}`}>
                       {feature}
                     </span>
                   </li>
@@ -170,7 +164,7 @@ export function Pricing({ onOpenModal }: PricingProps) {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="text-center text-sm text-white/35 mt-12 max-w-lg mx-auto"
+          className="text-center text-sm text-ink-muted mt-12 max-w-lg mx-auto"
         >
           All plans include HIPAA compliance, SOC 2 certification, and BAA.
         </motion.p>

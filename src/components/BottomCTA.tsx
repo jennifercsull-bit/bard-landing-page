@@ -9,8 +9,8 @@ interface BottomCTAProps {
 export function BottomCTA({ onOpenModal }: BottomCTAProps) {
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden">
-      {/* Gradient mesh background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sage/40 via-cream to-warm/30" />
+      {/* Gradient with subtle dark callback at top */}
+      <div className="absolute inset-0 bg-gradient-to-b from-forest-dark/5 via-sage/40 to-cream" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_30%_50%,_rgba(87,84,255,0.06)_0%,_transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_70%_50%,_rgba(255,140,66,0.04)_0%,_transparent_60%)]" />
 
@@ -35,6 +35,7 @@ export function BottomCTA({ onOpenModal }: BottomCTAProps) {
             Join the Waitlist
             <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
           </button>
+          <p className="text-xs text-ink-muted mt-4">Early access spots are limited.</p>
         </motion.div>
       </div>
     </section>

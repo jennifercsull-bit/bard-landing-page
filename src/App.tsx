@@ -32,6 +32,7 @@ function App() {
       <HowItWorks />
       <SectionDivider />
       <FeaturesGrid />
+      <SectionDivider />
       <Pricing onOpenModal={openModal} />
       <Security />
       <MissionMoment />
