@@ -1,11 +1,12 @@
-import { useRef, useEffect, useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef, useEffect, useState, useCallback } from 'react'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { Clock, FileWarning, CheckCircle2, Sparkles, FileText, Mic } from 'lucide-react'
 import { staggerContainer, staggerItem } from '../lib/animations'
 
 export function ScrollShowcase() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isLargeScreen, setIsLargeScreen] = useState(false)
+  const scrollProgress = useMotionValue(0)
 
   useEffect(() => {
     const check = () => setIsLargeScreen(window.innerWidth >= 1024)
@@ -14,22 +15,39 @@ export function ScrollShowcase() {
     return () => window.removeEventListener('resize', check)
   }, [])
 
-  // Framer Motion scroll-driven transforms (GPU-accelerated, zero re-renders)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end end'],
-  })
+  // Manual scroll progress calculation -- scoped to the container element
+  const updateProgress = useCallback(() => {
+    const el = containerRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    const vh = window.innerHeight
+    // progress 0 = element top at viewport top
+    // progress 1 = element bottom at viewport bottom
+    const scrollRange = rect.height - vh
+    const progress = Math.max(0, Math.min(1, -rect.top / scrollRange))
+    scrollProgress.set(progress)
+  }, [scrollProgress])
+
+  useEffect(() => {
+    updateProgress()
+    window.addEventListener('scroll', updateProgress, { passive: true })
+    window.addEventListener('resize', updateProgress, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', updateProgress)
+      window.removeEventListener('resize', updateProgress)
+    }
+  }, [updateProgress])
 
   // Problem slides left and fades out
-  const problemX = useTransform(scrollYProgress, [0.15, 0.55], ['0%', '-110%'])
-  const problemOpacity = useTransform(scrollYProgress, [0.15, 0.45], [1, 0])
+  const problemX = useTransform(scrollProgress, [0.15, 0.55], ['0%', '-110%'])
+  const problemOpacity = useTransform(scrollProgress, [0.15, 0.45], [1, 0])
 
   // Solution slides in from right and fades in
-  const solutionX = useTransform(scrollYProgress, [0.45, 0.85], ['110%', '0%'])
-  const solutionOpacity = useTransform(scrollYProgress, [0.5, 0.8], [0, 1])
+  const solutionX = useTransform(scrollProgress, [0.45, 0.85], ['110%', '0%'])
+  const solutionOpacity = useTransform(scrollProgress, [0.5, 0.8], [0, 1])
 
   // Background color transitions cream → sage
-  const bgColor = useTransform(scrollYProgress, [0.25, 0.65], ['#FAFAFA', '#F0EDFF'])
+  const bgColor = useTransform(scrollProgress, [0.25, 0.65], ['#FAFAFA', '#F0EDFF'])
 
   // Mobile: stacked panels with fade
   if (!isLargeScreen) {
