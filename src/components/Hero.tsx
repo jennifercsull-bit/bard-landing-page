@@ -99,7 +99,7 @@ export function Hero({ onOpenModal }: HeroProps) {
               AI Scribe listens to your sessions and writes therapy-fluent clinical documentation -- so your evenings belong to you, not your EHR.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-start gap-4">
+            <motion.div variants={fadeInUp} className="flex flex-col items-start">
               <button
                 onClick={onOpenModal}
                 className="group relative inline-flex items-center gap-4 px-10 py-5 bg-warm-accent text-white text-lg font-semibold rounded-2xl hover:bg-[#FF9F5C] transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(255,140,66,0.4)] hover:-translate-y-0.5 active:scale-[0.98]"
@@ -107,8 +107,8 @@ export function Hero({ onOpenModal }: HeroProps) {
                 Join the Waitlist
                 <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
               </button>
-              <p className="text-sm text-ink-muted mt-2 sm:mt-4">
-                Free tier available. No credit card required.
+              <p className="text-sm text-ink-muted mt-3">
+                Free tier available for waitlist partners. No credit card required.
               </p>
             </motion.div>
           </motion.div>
