@@ -24,10 +24,10 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-4">Product</h4>
             <ul className="space-y-2.5">
-              <li><a href="#how-it-works" className="text-sm text-white/40 hover:text-sage transition-colors duration-300">How It Works</a></li>
-              <li><a href="#features" className="text-sm text-white/40 hover:text-sage transition-colors duration-300">Features</a></li>
-              <li><a href="#pricing" className="text-sm text-white/40 hover:text-sage transition-colors duration-300">Pricing</a></li>
-              <li><a href="#security" className="text-sm text-white/40 hover:text-sage transition-colors duration-300">Security</a></li>
+              <li><a href="#how-it-works" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">How It Works</a></li>
+              <li><a href="#features" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">Features</a></li>
+              <li><a href="#pricing" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">Pricing</a></li>
+              <li><a href="#security" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">Security</a></li>
             </ul>
           </div>
 
@@ -35,9 +35,9 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-4">Company</h4>
             <ul className="space-y-2.5">
-              <li><a href="#mission" className="text-sm text-white/40 hover:text-sage transition-colors duration-300">Mission</a></li>
-              <li><a href="https://www.sondermind.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-sage transition-colors duration-300">SonderMind</a></li>
-              <li><a href="https://www.sondermind.com/careers" target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-sage transition-colors duration-300">Careers</a></li>
+              <li><a href="#mission" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">Mission</a></li>
+              <li><a href="https://www.sondermind.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">SonderMind</a></li>
+              <li><a href="https://www.sondermind.com/careers" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">Careers</a></li>
             </ul>
           </div>
 
@@ -45,9 +45,9 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-4">Legal</h4>
             <ul className="space-y-2.5">
-              <li><a href="#" className="text-sm text-white/40 hover:text-sage transition-colors duration-300">Terms & Conditions</a></li>
-              <li><a href="#" className="text-sm text-white/40 hover:text-sage transition-colors duration-300">Privacy Policy</a></li>
-              <li><a href="#" className="text-sm text-white/40 hover:text-sage transition-colors duration-300">BAA</a></li>
+              <li><a href="#" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">Terms & Conditions</a></li>
+              <li><a href="#" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">Privacy Policy</a></li>
+              <li><a href="#" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">BAA</a></li>
             </ul>
           </div>
         </div>

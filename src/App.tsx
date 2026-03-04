@@ -26,17 +26,19 @@ function App() {
   return (
     <div className="min-h-screen bg-cream">
       <Navbar onOpenModal={openModal} />
-      <Hero onOpenModal={openModal} />
-      <ScrollShowcase />
-      <Testimonial />
-      <HowItWorks />
-      <SectionDivider />
-      <FeaturesGrid />
-      <SectionDivider />
-      <Pricing onOpenModal={openModal} />
-      <Security />
-      <MissionMoment />
-      <BottomCTA onOpenModal={openModal} />
+      <main>
+        <Hero onOpenModal={openModal} />
+        <ScrollShowcase />
+        <Testimonial />
+        <HowItWorks />
+        <SectionDivider />
+        <FeaturesGrid />
+        <SectionDivider />
+        <Pricing onOpenModal={openModal} />
+        <Security />
+        <MissionMoment />
+        <BottomCTA onOpenModal={openModal} />
+      </main>
       <Footer />
       <WaitlistModal isOpen={modalOpen} onClose={closeModal} />
     </div>
