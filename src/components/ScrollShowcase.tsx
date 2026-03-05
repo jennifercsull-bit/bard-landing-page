@@ -18,7 +18,7 @@ export function ScrollShowcase() {
             variants={staggerItem}
             className="rounded-3xl bg-white border border-sage-dark/10 shadow-sm p-8 sm:p-10 lg:p-12 flex flex-col"
           >
-            <p className="text-sm font-semibold text-forest/40 uppercase tracking-[0.2em] mb-5">
+            <p className="text-xs font-bold text-forest uppercase tracking-[0.25em] mb-5">
               The problem
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl text-forest leading-tight mb-4">
@@ -42,7 +42,7 @@ export function ScrollShowcase() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_30%_30%_at_80%_80%,_rgba(87,84,255,0.12)_0%,_transparent_60%)]" />
 
             <div className="relative z-10 flex flex-col h-full">
-              <p className="text-sm font-semibold text-white/30 uppercase tracking-[0.2em] mb-5">
+              <p className="text-xs font-bold text-white/70 uppercase tracking-[0.25em] mb-5">
                 The solution
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl text-white leading-tight mb-4">
@@ -79,9 +79,13 @@ function ProblemMockUI() {
             <span className="text-[10px] font-semibold text-ink-muted/50 uppercase tracking-wider">Objective</span>
             <p className="mt-0.5 opacity-60">Affect appeared... eye contact was... need to check notes from...</p>
           </div>
-          <div className="opacity-30">
+          <div>
             <span className="text-[10px] font-semibold text-ink-muted/50 uppercase tracking-wider">Assessment</span>
-            <div className="h-2 bg-sage-dark/20 rounded-full w-2/5 mt-1" />
+            <p className="mt-0.5 opacity-40">Generalized Anxiety Disorder... need to review scoring from...</p>
+          </div>
+          <div>
+            <span className="text-[10px] font-semibold text-ink-muted/50 uppercase tracking-wider opacity-30">Plan</span>
+            <div className="h-2 bg-sage-dark/15 rounded-full w-2/5 mt-1" />
           </div>
           <div className="flex items-center gap-1 mt-2">
             <div className="w-1.5 h-4 bg-forest/30 animate-pulse rounded-sm" />
