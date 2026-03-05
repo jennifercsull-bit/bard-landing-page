@@ -15,7 +15,7 @@ export function BottomCTA({ onOpenModal }: BottomCTAProps) {
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
           variants={fadeInUp}
-          className="relative max-w-4xl mx-auto bg-gradient-to-br from-[#3B2FA0] via-forest to-[#2A2660] rounded-[2rem] p-10 sm:p-12 lg:p-16 text-center overflow-hidden"
+          className="relative max-w-4xl mx-auto bg-gradient-to-br from-forest via-[#4845D9] to-[#3B2FA0] rounded-[2rem] p-10 sm:p-12 lg:p-16 text-center overflow-hidden"
         >
           {/* Decorative orbs */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_20%_20%,_rgba(240,237,255,0.08)_0%,_transparent_60%)]" />
