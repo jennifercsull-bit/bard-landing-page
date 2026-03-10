@@ -26,7 +26,6 @@ export function Hero({ onOpenModal }: HeroProps) {
     offset: ['start start', 'end start'],
   })
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 80])
-  const glowY = useTransform(scrollYProgress, [0, 1], [0, 40])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -76,7 +75,7 @@ export function Hero({ onOpenModal }: HeroProps) {
                 <div className="w-px h-4 bg-sage-dark/20" />
                 <div className="w-2 h-2 bg-forest rounded-full animate-pulse" />
                 <span className="text-sm text-ink-muted tracking-wide">
-                  SonderMind clinical AI
+                  by SonderMind
                 </span>
               </div>
             </motion.div>
@@ -85,10 +84,10 @@ export function Hero({ onOpenModal }: HeroProps) {
               variants={fadeInUp}
               className="font-serif text-4xl sm:text-5xl lg:text-[3.8rem] xl:text-[4.2rem] text-forest leading-[1.08] tracking-tight mb-7"
             >
-              Your notes are done
+              Meet Bard.
               <br />
               <span className="bg-gradient-to-r from-forest via-forest-light to-[#9B8FFF] bg-clip-text text-transparent">
-                before you leave the office.
+                Your notes are done.
               </span>
             </motion.h1>
 
@@ -96,7 +95,7 @@ export function Hero({ onOpenModal }: HeroProps) {
               variants={fadeInUp}
               className="text-lg sm:text-xl text-ink-light max-w-lg leading-relaxed mb-10"
             >
-              AI Scribe listens to your sessions and writes therapy-fluent clinical documentation so your evenings belong to you, not your EHR.
+              Bard transcribes your sessions and writes therapy-fluent clinical documentation so your evenings belong to you, not your EHR.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col items-start">
@@ -113,22 +112,16 @@ export function Hero({ onOpenModal }: HeroProps) {
             </motion.div>
           </motion.div>
 
-          {/* Right: Image with glow + parallax */}
+          {/* Right: Image with parallax */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, ease: easeCubic, delay: 0.3 }}
             className="hidden lg:block relative"
           >
-            {/* Glow behind image -- parallax (slower) */}
-            <motion.div
-              style={{ y: glowY }}
-              className="absolute -inset-8 bg-gradient-to-br from-forest/20 via-sage/40 to-transparent rounded-[3rem] blur-3xl"
-            />
-            {/* Image container -- parallax */}
             <motion.div
               style={{ y: imageY }}
-              className="relative rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(87,84,255,0.25)] ring-1 ring-white/20"
+              className="relative rounded-3xl overflow-hidden"
             >
               <video
                 src={`${import.meta.env.BASE_URL}hero-therapist.mp4`}
@@ -137,9 +130,8 @@ export function Hero({ onOpenModal }: HeroProps) {
                 muted
                 loop
                 playsInline
-                className="w-full h-auto object-cover"
+                className="block w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/30 via-transparent to-white/5" />
             </motion.div>
           </motion.div>
         </div>
@@ -166,12 +158,31 @@ export function Hero({ onOpenModal }: HeroProps) {
         </motion.div>
       </div>
 
+      {/* Origin story -- Bard by SonderMind */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.5, ease: easeCubic }}
+        className="relative z-10 mt-16 lg:mt-20"
+      >
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-xs font-semibold text-forest/40 uppercase tracking-[0.25em] mb-4">
+              Bard by SonderMind
+            </p>
+            <p className="text-lg sm:text-xl text-ink-light leading-relaxed">
+              Bard was born inside SonderMind, where we spent the last decade building technology and workflow improvement tools alongside 16,000+ behavioral health providers. Every model, every template, every clinical insight has been tested and refined across millions of data points. Now we're making that intelligence available to clinicians&nbsp;everywhere.
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
       {/* Stats bar -- visually separated with gradient border */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.6, ease: easeCubic }}
-        className="relative z-10 mt-12 lg:mt-16"
+        className="relative z-10 mt-10 lg:mt-12"
       >
         <div className="h-px bg-gradient-to-r from-transparent via-sage-dark/30 to-transparent" />
         <div className="bg-gradient-to-b from-sage/30 to-cream py-8">
@@ -187,7 +198,7 @@ export function Hero({ onOpenModal }: HeroProps) {
               ))}
             </div>
             <p className="text-center text-ink-muted/50 text-xs mt-6 tracking-widest uppercase">
-              Based on SonderMind AI data
+              Based on SonderMind clinical AI data
             </p>
           </div>
         </div>

@@ -12,7 +12,7 @@ const steps = [
   {
     step: '2',
     title: 'Generate',
-    description: 'AI creates therapy-fluent clinical notes in 3-5 minutes. Choose from 7 templates or your own.',
+    description: 'Bard writes therapy-fluent clinical notes in 3-5 minutes. Choose from multiple templates or create your own.',
     callout: 'Trained specifically on mental health documentation.',
     mockUI: 'generate' as const,
   },
@@ -20,7 +20,7 @@ const steps = [
     step: '3',
     title: 'Review & Submit',
     description: 'Edit your notes, add clinical impressions, and push directly to your EHR.',
-    callout: 'SimplePractice and 10+ EHR integrations.',
+    callout: 'EHR integrations coming soon.',
     mockUI: 'review' as const,
   },
 ]
@@ -121,7 +121,7 @@ function MockWindow({ title, children }: { title: string; children: React.ReactN
           <div className="w-3 h-3 rounded-full bg-[#FFBD44]" />
           <div className="w-3 h-3 rounded-full bg-[#00CA4E]" />
         </div>
-        <span className="text-xs text-ink-muted ml-3 font-medium">AI Scribe | {title}</span>
+        <span className="text-xs text-ink-muted ml-3 font-medium">Bard | {title}</span>
       </div>
       <div className="p-5 sm:p-6">{children}</div>
     </motion.div>

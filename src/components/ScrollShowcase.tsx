@@ -25,7 +25,7 @@ export function ScrollShowcase() {
               Documentation takes as long as the session
             </h2>
             <p className="text-base text-ink-light leading-relaxed mb-8">
-              Therapists spend 1-2 hours every evening catching up on clinical notes. It's the #1 driver of burnout.
+              Therapists spend hours each week catching up on clinical notes. It's a major driver of burnout.
             </p>
             <div className="mt-auto">
               <ProblemMockUI />
@@ -49,7 +49,7 @@ export function ScrollShowcase() {
                 Your note is ready before you stand up
               </h2>
               <p className="text-base text-white/60 leading-relaxed mb-8">
-                AI Scribe listens, understands therapeutic context, and generates clinical documentation you can trust.
+                Bard transcribes your sessions, understands therapeutic context, and generates clinical documentation you can trust.
               </p>
               <div className="mt-auto">
                 <SolutionMockUI />

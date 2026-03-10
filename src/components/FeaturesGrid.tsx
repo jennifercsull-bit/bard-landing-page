@@ -23,7 +23,7 @@ const iconAccents = [
 const features = [
   {
     icon: FileText,
-    title: '7 Built-in Templates',
+    title: 'Multiple Templates',
     description: 'Therapy-fluent formats designed for mental health documentation. Ready on day one.',
     size: 'large' as const,
     pills: templatePills,
@@ -84,7 +84,7 @@ export function FeaturesGrid() {
             Everything you need to<br className="hidden sm:block" /> document faster
           </h2>
           <p className="text-lg text-ink-light max-w-lg mx-auto">
-            A complete clinical documentation toolkit, built for mental health.
+            Everything Bard brings to your practice, out of the box.
           </p>
         </motion.div>
 

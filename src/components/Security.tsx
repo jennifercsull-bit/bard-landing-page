@@ -47,9 +47,12 @@ export function Security() {
             className="text-center mb-10"
           >
             <p className="text-sm font-semibold text-white/40 uppercase tracking-[0.25em] mb-5">Security</p>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.2rem] text-white leading-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-[3.2rem] text-white leading-tight mb-5">
               Built for healthcare<br className="hidden sm:block" /> from day one
             </h2>
+            <p className="text-lg text-white/50 max-w-2xl mx-auto leading-relaxed">
+              Bard was forged inside SonderMind, serving 16,000+ behavioral health providers. Now we're making it available to clinicians everywhere.
+            </p>
           </motion.div>
 
           <motion.div

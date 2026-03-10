@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 import { fadeInUp, staggerContainer, staggerItem } from '../lib/animations'
 
 const proofStats = [
-  { value: '6,000+', label: 'therapists on SonderMind' },
-  { value: '3 yrs', label: 'clinical AI R&D' },
-  { value: '10M+', label: 'sessions informed' },
+  { value: '16,000+', label: 'providers trust SonderMind' },
+  { value: '10 yrs', label: 'of clinical R&D' },
+  { value: '5M+', label: 'sessions informed by our technology' },
 ]
 
 export function Testimonial() {
@@ -43,11 +43,11 @@ export function Testimonial() {
 
             <div className="flex items-center justify-center gap-4">
               <div className="w-14 h-14 rounded-full bg-gradient-to-br from-white/20 to-white/5 ring-2 ring-white/10 flex items-center justify-center text-white font-semibold text-lg backdrop-blur-sm">
-                DR
+                CW
               </div>
               <div className="text-left">
-                <div className="text-base font-medium text-white/90">Dr. Rebecca M., LCSW</div>
-                <div className="text-sm text-white/55">SonderMind AI Scribe Pilot &middot; Denver, CO</div>
+                <div className="text-base font-medium text-white/90">Clint W., LCSW</div>
+                <div className="text-sm text-white/55">SonderMind Therapist</div>
               </div>
             </div>
           </motion.div>
