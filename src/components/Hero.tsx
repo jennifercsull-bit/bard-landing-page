@@ -130,7 +130,7 @@ export function Hero({ onOpenModal }: HeroProps) {
                 muted
                 loop
                 playsInline
-                className="block w-full h-auto object-cover"
+                className="block w-[calc(100%+24px)] h-[calc(100%+24px)] max-w-none object-cover object-[45%_center] -m-3"
               />
             </motion.div>
           </motion.div>
