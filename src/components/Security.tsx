@@ -51,7 +51,7 @@ export function Security() {
               Built for healthcare<br className="hidden sm:block" /> from day one
             </h2>
             <p className="text-lg text-white/50 max-w-2xl mx-auto leading-relaxed">
-              Bard was forged inside SonderMind, serving 16,000+ behavioral health providers. Now we're making it available to clinicians everywhere.
+              Built by 16,000+ behavioral health providers who were tired of working til midnight. Maximum security, zero compromises.
             </p>
           </motion.div>
 

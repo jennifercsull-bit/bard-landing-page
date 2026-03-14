@@ -160,7 +160,6 @@ export function SessionTakeaways() {
               variants={fadeInUp}
               className="text-xs text-ink-muted/60 mt-6 uppercase tracking-wider"
             >
-              Based on SonderMind in-product surveys, March 2026
             </motion.p>
           </div>
         </div>

@@ -76,7 +76,7 @@ export function Hero({ onOpenModal }: HeroProps) {
                 <div className="w-px h-4 bg-sage-dark/20" />
                 <div className="w-2 h-2 bg-forest rounded-full animate-pulse" />
                 <span className="text-sm text-ink-muted tracking-wide">
-                  by SonderMind
+                  by therapists, for therapists
                 </span>
               </div>
             </motion.div>
@@ -118,7 +118,7 @@ export function Hero({ onOpenModal }: HeroProps) {
             initial={{ opacity: 0, scale: 0.94, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, ease: easeCubic, delay: 0.3 }}
-            className="hidden lg:block relative"
+            className="hidden lg:block relative lg:scale-125"
           >
             <motion.div
               style={{ y: imageY }}
@@ -159,7 +159,7 @@ export function Hero({ onOpenModal }: HeroProps) {
         </motion.div>
       </div>
 
-      {/* Origin story -- Bard by SonderMind */}
+      {/* Origin story -- Bard by therapists, for therapists */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -169,7 +169,7 @@ export function Hero({ onOpenModal }: HeroProps) {
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-xs font-semibold text-forest/40 uppercase tracking-[0.25em] mb-4">
-              Bard by SonderMind
+              Bard by therapists, for therapists
             </p>
             <p className="text-lg sm:text-xl text-ink-light leading-relaxed">
               Bard was born inside SonderMind, where we spent the last decade building technology and workflow improvement tools alongside 16,000+ behavioral health providers. Every model, every template, every clinical insight has been tested and refined across millions of data points. Now we're making that intelligence available to clinicians&nbsp;everywhere.
@@ -199,7 +199,7 @@ export function Hero({ onOpenModal }: HeroProps) {
               ))}
             </div>
             <p className="text-center text-ink-muted/50 text-xs mt-6 tracking-widest uppercase">
-              Based on SonderMind clinical AI data, March 2026
+              Based on clinical AI data from 16,000+ providers
             </p>
           </div>
         </div>

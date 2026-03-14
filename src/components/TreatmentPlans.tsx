@@ -76,7 +76,6 @@ export function TreatmentPlans() {
                 "Providers using automated treatment plans are already streamlining care plans—reducing administrative burden while maintaining clinical quality."
               </p>
               <p className="text-xs text-ink-muted/60 mt-3 ml-5 uppercase tracking-wider">
-                SonderMind All Hands, March 2026
               </p>
             </motion.div>
           </div>

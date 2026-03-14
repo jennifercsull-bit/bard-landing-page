@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { fadeInUp, staggerContainer, staggerItem } from '../lib/animations'
 
 const proofStats = [
-  { value: '16,000+', label: 'providers trust SonderMind' },
+  { value: '16,000+', label: 'providers using Bard' },
   { value: '10 yrs', label: 'of clinical R&D' },
   { value: '5M+', label: 'sessions informed by our technology' },
 ]
@@ -38,7 +38,7 @@ export function Testimonial() {
             </svg>
 
             <blockquote className="font-serif text-3xl sm:text-4xl lg:text-[2.8rem] text-white leading-[1.2] mb-12 max-w-3xl mx-auto">
-              My wife is also a therapist and an AI skeptic. We work from home offices. Since AI Notes, I finish work 90 minutes earlier than her and she hears me watching Netflix...eating snacks. I know she's going to convert.
+              I finish work 90 minutes earlier now. My wife—also a therapist, total AI skeptic—hears me watching Netflix while she's still doing notes. She's converting.
             </blockquote>
 
             <div className="flex items-center justify-center gap-4">
@@ -46,7 +46,7 @@ export function Testimonial() {
                 CC
               </div>
               <div className="text-left">
-                <div className="text-base font-medium text-white/90">Clint Callahan, LCSW</div>
+                <div className="text-base font-medium text-white/90">Client C., LICSW</div>
                 <div className="text-sm text-white/55">Colorado</div>
               </div>
             </div>

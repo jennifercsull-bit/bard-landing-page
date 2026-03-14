@@ -17,7 +17,7 @@ export function Footer() {
                 </svg>
               </div>
               <span className="font-serif text-[1.15rem] text-sage tracking-tight">Bard</span>
-              <span className="text-xs text-white/30 font-sans ml-1.5 self-end mb-0.5">by SonderMind</span>
+              <span className="text-xs text-white/30 font-sans ml-1.5 self-end mb-0.5"></span>
             </div>
             <p className="text-sm text-white/30 leading-relaxed max-w-[200px]">
               Your clinical documentation companion.
@@ -40,7 +40,6 @@ export function Footer() {
             <h4 className="text-xs font-semibold text-white/50 uppercase tracking-[0.2em] mb-4">Company</h4>
             <ul className="space-y-2.5">
               <li><a href="#mission" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">Mission</a></li>
-              <li><a href="https://www.sondermind.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">SonderMind</a></li>
               <li><a href="https://www.sondermind.com/careers" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-sage transition-colors duration-300">Careers</a></li>
             </ul>
           </div>
@@ -58,7 +57,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/[0.06] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-white/20 text-xs">&copy; {new Date().getFullYear()} SonderMind, Inc. All rights reserved.</span>
+          <span className="text-white/20 text-xs">&copy; {new Date().getFullYear()} Bard Health, Inc. All rights reserved.</span>
           <span className="text-white/15 text-xs">HIPAA Compliant &middot; SOC 2 Type II Certified</span>
         </div>
       </div>

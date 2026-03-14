@@ -23,7 +23,7 @@ export function MissionMoment() {
               Documentation is the tax therapists pay for doing their job. We're eliminating it.
             </h2>
             <p className="text-lg sm:text-xl text-ink-light leading-relaxed max-w-2xl">
-              SonderMind has spent a decade building technology for mental health providers. Bard is the result of watching thousands of clinicians lose their evenings to paperwork and deciding that the technology finally exists to fix it.
+              A decade of building technology for mental health providers. Bard is the result of watching thousands of clinicians lose their evenings to paperwork—and deciding that ends now.
             </p>
           </div>
         </motion.div>
