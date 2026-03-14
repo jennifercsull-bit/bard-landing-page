@@ -96,7 +96,7 @@ export function Hero({ onOpenModal }: HeroProps) {
               variants={fadeInUp}
               className="text-lg sm:text-xl text-ink-light max-w-lg leading-relaxed mb-10"
             >
-              Not just a scribe—a provider joy generator built with maximum security. Instant Treatment Plans, Progress Notes plus Session Summaries and Goal Tracking for your clients. This is what happens when 16,000 providers build AI for themselves.
+              Not just a scribe—your burnout insurance. Instant Treatment Plans and Progress Notes, plus Session Summaries that clients love. This is what happens when 16,000 providers build their own AI.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col items-start">
