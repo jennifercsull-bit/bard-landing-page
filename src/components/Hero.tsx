@@ -85,10 +85,10 @@ export function Hero({ onOpenModal }: HeroProps) {
               variants={fadeInUp}
               className="font-serif text-4xl sm:text-5xl lg:text-[3.8rem] xl:text-[4.2rem] text-forest leading-[1.08] tracking-tight mb-7"
             >
-              Meet Bard.
+              Built by therapists.
               <br />
               <span className="bg-gradient-to-r from-forest via-forest-light to-[#9B8FFF] bg-clip-text text-transparent">
-                Your notes are done.
+                For therapists.
               </span>
             </motion.h1>
 
@@ -96,7 +96,7 @@ export function Hero({ onOpenModal }: HeroProps) {
               variants={fadeInUp}
               className="text-lg sm:text-xl text-ink-light max-w-lg leading-relaxed mb-10"
             >
-              Bard transcribes your sessions and writes therapy-fluent clinical documentation so your evenings belong to you, not your EHR.
+              Not just a scribe—a client retention tool with maximum clinical security. Treatment Plans, Progress Notes, uplifting session recaps and goal tracking. This is what happens when 16,000 providers build AI.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col items-start">

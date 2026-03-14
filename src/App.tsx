@@ -5,6 +5,8 @@ import { ScrollShowcase } from './components/ScrollShowcase'
 import { Testimonial } from './components/Testimonial'
 import { HowItWorks } from './components/HowItWorks'
 import { FeaturesGrid } from './components/FeaturesGrid'
+import { TreatmentPlans } from './components/TreatmentPlans'
+import { SessionTakeaways } from './components/SessionTakeaways'
 import { Pricing } from './components/Pricing'
 import { Security } from './components/Security'
 import { MissionMoment } from './components/MissionMoment'
@@ -33,6 +35,8 @@ function App() {
         <HowItWorks />
         <SectionDivider />
         <FeaturesGrid />
+        <TreatmentPlans />
+        <SessionTakeaways />
         <SectionDivider />
         <Pricing onOpenModal={openModal} />
         <Security />

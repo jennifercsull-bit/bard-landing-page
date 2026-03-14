@@ -7,8 +7,6 @@ import {
   Users,
   WifiOff,
   AudioLines,
-  ClipboardList,
-  Sparkles,
 } from 'lucide-react'
 
 const templatePills = ['SOAP', 'Progress', 'Intake', 'Discharge', 'DAP', 'Treatment Plan', 'Psychotherapy']
@@ -20,8 +18,6 @@ const iconAccents = [
   'from-forest/10 to-forest-light/5',
   'from-warm/80 to-warm-accent/10',
   'from-sage/60 to-sage/30',
-  'from-forest/10 to-forest-light/5',
-  'from-warm/80 to-warm-accent/10',
 ]
 
 const features = [
@@ -36,18 +32,6 @@ const features = [
     icon: Wrench,
     title: 'Custom Templates',
     description: 'Create your own note formats. Match your documentation style exactly.',
-    size: 'default' as const,
-  },
-  {
-    icon: ClipboardList,
-    title: 'Treatment Plans',
-    description: 'AI-generated treatment plans from your session notes. Insurance-compliant, auto-updating, ready in minutes.',
-    size: 'default' as const,
-  },
-  {
-    icon: Sparkles,
-    title: 'Session Takeaways',
-    description: 'Send clients a personalized recap after every session. Key insights, homework, and goals — delivered automatically.',
     size: 'default' as const,
   },
   {
