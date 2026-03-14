@@ -96,7 +96,7 @@ export function Hero({ onOpenModal }: HeroProps) {
               variants={fadeInUp}
               className="text-lg sm:text-xl text-ink-light max-w-lg leading-relaxed mb-10"
             >
-              Not just a scribe—a client retention tool with maximum clinical security. Treatment Plans, Progress Notes, uplifting session recaps and goal tracking. This is what happens when 16,000 providers build AI.
+              Not just a scribe—a provider joy generator built with maximum security. Instant Treatment Plans, Progress Notes plus Session Summaries and Goal Tracking for your clients. This is what happens when 16,000 providers build AI for themselves.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-col items-start">
