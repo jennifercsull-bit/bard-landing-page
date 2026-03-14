@@ -5,6 +5,8 @@ import { fadeInUp } from '../lib/animations'
 const features = [
   'AI-powered clinical notes',
   'Multiple therapy-fluent templates',
+  'Treatment plans',
+  'Session takeaways',
   'Session transcription',
   'Consent tracking',
   'Session summaries',

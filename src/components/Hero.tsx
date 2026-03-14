@@ -6,6 +6,7 @@ import { fadeInUp, easeCubic } from '../lib/animations'
 const roles = ['therapists', 'psychologists', 'counselors', 'clinical social workers']
 
 const stats = [
+  { value: '2x', label: 'more clients per week with AI Notes' },
   { value: '100%', label: 'client satisfaction with session takeaways' },
   { value: '99%', label: 'client consent rate for AI-assisted notes' },
   { value: '90 min', label: 'saved daily per provider' },
@@ -187,7 +188,7 @@ export function Hero({ onOpenModal }: HeroProps) {
         <div className="h-px bg-gradient-to-r from-transparent via-sage-dark/30 to-transparent" />
         <div className="bg-gradient-to-b from-sage/30 to-cream py-8">
           <div className="section-container">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="font-serif text-3xl sm:text-4xl lg:text-[2.8rem] text-forest tracking-tight mb-2">
@@ -198,7 +199,7 @@ export function Hero({ onOpenModal }: HeroProps) {
               ))}
             </div>
             <p className="text-center text-ink-muted/50 text-xs mt-6 tracking-widest uppercase">
-              Based on SonderMind clinical AI data
+              Based on SonderMind clinical AI data, March 2026
             </p>
           </div>
         </div>

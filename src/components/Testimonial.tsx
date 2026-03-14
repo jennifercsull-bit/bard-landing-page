@@ -38,16 +38,16 @@ export function Testimonial() {
             </svg>
 
             <blockquote className="font-serif text-3xl sm:text-4xl lg:text-[2.8rem] text-white leading-[1.2] mb-12 max-w-3xl mx-auto">
-              I could easily see 20 clients a week now without adding hours to my schedule.
+              My wife is also a therapist and an AI skeptic. We work from home offices. Since AI Notes, I finish work 90 minutes earlier than her and she hears me watching Netflix...eating snacks. I know she's going to convert.
             </blockquote>
 
             <div className="flex items-center justify-center gap-4">
               <div className="w-14 h-14 rounded-full bg-gradient-to-br from-white/20 to-white/5 ring-2 ring-white/10 flex items-center justify-center text-white font-semibold text-lg backdrop-blur-sm">
-                CW
+                CC
               </div>
               <div className="text-left">
-                <div className="text-base font-medium text-white/90">Clint W., LCSW</div>
-                <div className="text-sm text-white/55">SonderMind Therapist</div>
+                <div className="text-base font-medium text-white/90">Clint Callahan, LCSW</div>
+                <div className="text-sm text-white/55">Colorado</div>
               </div>
             </div>
           </motion.div>
