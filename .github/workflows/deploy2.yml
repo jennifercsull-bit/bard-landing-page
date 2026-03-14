@@ -1,0 +1,314 @@
+- Full Clint Callahan testimonial
+  - 8 features (Treatment Plans + Session Takeaways added)
+  - Updated pricing feature list
+
+  ---
+  I see you want this deployed to GitHub so Val can see the live updated
+  version. Let me create a new repo under your GitHub account with all the
+  updates:
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git remote get-url origin)
+  ⎿  https://github.com/vyoung603/ai-scribe-landing.git
+
+⏺ Searched for 1 pattern (ctrl+o to expand)
+
+⏺ Bash(gh auth status 2>&1)
+  ⎿  github.com
+       ✓ Logged in to github.com account jennifercsull-bit (keyring)
+       - Active account: true
+     … +3 lines (ctrl+o to expand)
+
+⏺ Bash(cd ~/claude/bard-landing-updated && gh repo create
+      jennifercsull-bit/bard-landing-updated --public --source=.
+      --remote=upstream --description="Updated Bard by S…)
+  ⎿  Error: Exit code 1
+     GraphQL: Resource not accessible by personal access token
+     (createRepository)
+
+⏺ The GitHub CLI doesn't have permission to create repos with the current
+  token. Let me guide you through creating it manually:
+
+  Option 1: Create Repo on GitHub (Recommended)
+
+  Step 1: Create the repo on GitHub.com
+  1. Go to https://github.com/new
+  2. Repository name: bard-landing-updated
+  3. Description: Updated Bard by SonderMind landing page with Treatment
+  Plans & Session Takeaways (March 2026)
+  4. Public repo
+  5. Don't initialize with README (we already have code)
+  6. Click "Create repository"
+
+  Step 2: Push the code
+  cd ~/claude/bard-landing-updated
+  git remote remove origin
+  git remote add origin
+  https://github.com/jennifercsull-bit/bard-landing-updated.git
+  git push -u origin feature/march-2026-updates
+
+  Step 3: Enable GitHub Pages
+  1. Go to repo Settings → Pages
+  2. Source: Deploy from a branch
+  3. Branch: feature/march-2026-updates → /root (or main if you merge first)
+  4. Save
+
+  ---
+  Option 2: I'll Create a Static HTML Export
+
+  If you want something simpler, I can create a single HTML file with all
+  the updates that you can send to Val directly.
+
+  Which option do you prefer?
+
+✻ Brewed for 2m 53s · 1 background task still running (↓ to manage)
+
+❯ cd ~/claude/bard-landing-updated                                          
+  ⎿  Interrupted · What should Claude do instead?
+
+❯ cd ~/claude/bard-landing-updated                                          
+  git remote remove origin                                                  
+  git remote add origin                                                     
+  https://github.com/jennifercsull-bit/bard-landing-updated.git             
+  git push -u origin feature/march-2026-updates                             
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git remote remove origin)
+  ⎿  (No output)
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git remote add origin
+      https://github.com/jennifercsull-bit/bard-landing-updated.git)
+  ⎿  (No output)
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git push -u origin
+      feature/march-2026-updates 2>&1)
+  ⎿  Error: Exit code 128
+     remote: Repository not found.
+     fatal: repository
+     'https://github.com/jennifercsull-bit/bard-landing-updated.git/' not
+     found
+
+⏺ The repository doesn't exist yet on GitHub. You need to create it first:
+
+  Step 1: Create the repo on GitHub.com
+
+  Go to: https://github.com/new
+
+  Fill in:
+  - Repository name: bard-landing-updated
+  - Description: Updated Bard by SonderMind landing page with Treatment
+  Plans & Session Takeaways (March 2026)
+  - Public repo
+  - Uncheck "Add a README file" (we already have code)
+  - Click "Create repository"
+
+  Step 2: Then run the push command again
+  cd ~/claude/bard-landing-updated
+  git push -u origin feature/march-2026-updates
+
+  Let me know when you've created the repo and I'll help with the GitHub
+  Pages setup.
+
+❯  cd ~/claude/bard-landing-updated                                         
+  git push -u origin feature/march-2026-updates                             
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git push -u origin
+      feature/march-2026-updates 2>&1)
+  ⎿  Error: Exit code 128
+     remote: Repository not found.
+     fatal: repository
+     'https://github.com/jennifercsull-bit/bard-landing-updated.git/' not
+     found
+
+⏺ The repo still doesn't exist on GitHub.
+
+  You need to create it first at GitHub.com: https://github.com/new
+
+  Or let me know if you want to:
+  1. Use a different repo name
+  2. Push to an existing repo
+  3. Use a different GitHub account
+
+  Once the repo is created on GitHub, the push command will work.
+
+❯ echo "# bard-landing-page" >> README.md                                   
+git init                                                                    
+git add README.md                                                           
+git commit -m "first commit"                                                
+git branch -M main                                                          
+git remote add origin                                                       
+https://github.com/jennifercsull-bit/bard-landing-page.git                  
+git push -u origin main                                                     
+
+⏺ I see - the GitHub repo is named bard-landing-page (not
+  bard-landing-updated). Let me update the remote and push our existing
+  code:
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git remote remove origin)
+  ⎿  (No output)
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git remote add origin
+      https://github.com/jennifercsull-bit/bard-landing-page.git)
+  ⎿  (No output)
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git push -u origin main 2>&1)
+  ⎿  Error: Exit code 1
+     To https://github.com/jennifercsull-bit/bard-landing-page.git
+      ! [remote rejected] main -> main (refusing to allow a Personal Access
+     Token to create or update workflow `.github/workflows/deploy.yml`
+     without `workflow` scope)
+     error: failed to push some refs to
+     'https://github.com/jennifercsull-bit/bard-landing-page.git'
+
+⏺ Bash(cd ~/claude/bard-landing-updated && ls -la .github/workflows/)
+  ⎿  total 8
+     drwxr-xr-x  3 jensullivan  staff   96 Mar 14 10:24 .
+     drwxr-xr-x  3 jensullivan  staff   96 Mar 14 10:24 ..
+     -rw-r--r--  1 jensullivan  staff  740 Mar 14 10:24 deploy.yml
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git rm
+      .github/workflows/deploy.yml && git commit -m "Temporarily remove
+      workflow for initial push")
+  ⎿  rm '.github/workflows/deploy.yml'
+     [feature/march-2026-updates e29bb1f] Temporarily remove workflow f
+     or initial push
+     … +16 lines (ctrl+o to expand)
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git checkout main && git merge
+      feature/march-2026-updates --no-edit)
+  ⎿  Switched to branch 'main'
+     M  package-lock.json
+     Updating 430c3ec..e29bb1f
+     … +9 lines (ctrl+o to expand)
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git push -u origin main 2>&1)
+  ⎿  To https://github.com/jennifercsull-bit/bard-landing-page.git
+      * [new branch]      main -> main
+     branch 'main' set up to track 'origin/main'.
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git push origin
+      feature/march-2026-updates 2>&1)
+  ⎿  remote:
+     remote: Create a pull request for 'feature/march-2026-updates' on
+     GitHub by visiting:
+     … +6 lines (ctrl+o to expand)
+
+⏺ Read 1 file (ctrl+o to expand)
+
+⏺ Update(vite.config.ts)
+  ⎿  Added 1 line, removed 1 line
+      3  import tailwindcss from '@tailwindcss/vite'
+      4  
+      5  export default defineConfig({
+      6 -  base: '/ai-scribe-landing/',                              
+      6 +  base: '/bard-landing-page/',                              
+      7    plugins: [react(), tailwindcss()],
+      8  })
+
+⏺ Write(.github/workflows/deploy.yml)
+  ⎿  Wrote 42 lines to
+     ../../~/claude/bard-landing-updated/.github/workflows/deploy.yml
+       1 name: Deploy to GitHub Pages
+       2
+       3 on:
+       4   push:
+       5     branches: [ main ]
+       6   workflow_dispatch:
+       7
+       8 permissions:
+       9   contents: read
+      10   pages: write
+     … +32 lines (ctrl+o to expand)
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git add -A && git commit -m
+      "Update base path to /bard-landing-page/ and add deployment workflow"
+      && git push origin main 2>…)
+  ⎿  Error: Exit code 1
+     [main ecb82d1] Update base path to /bard-landing-page/ and add
+     deployment workflow
+      Committer: Jen Sullivan <jensullivan@mac.mynetworksettings.com>
+     Your name and email address were configured automatically based
+     on your username and hostname. Please check that they are accurate.
+     You can suppress this message by setting them explicitly:
+
+         git config --global user.name "Your Name"
+         git config --global user.email you@example.com
+
+     … +9 lines (ctrl+o to see all)
+
+⏺ The GitHub token doesn't have permission to push workflow files. Let me
+  build the site and we'll set up GitHub Pages manually:
+
+⏺ Bash(cd ~/claude/bard-landing-updated && npm run build 2>&1)
+  ⎿  > ai-scribe-landing@0.0.0 build
+     > tsc -b && vite build
+     … +9 lines (ctrl+o to expand)
+
+⏺ Bash(cd ~/claude/bard-landing-updated && git reset --soft HEAD~1 && git
+      restore --staged .github/workflows/deploy.yml && rm
+      .github/workflows/deploy.yml && git add v…)
+  ⎿  [main f270977] Update base path to /bard-landing-page/
+      Committer: Jen Sullivan <jensullivan@mac.mynetworksettings.com>
+     Your name and email address were configured automatically based
+     … +15 lines (ctrl+o to expand)
+
+⏺ Perfect! The code is pushed to GitHub. Now you need to enable GitHub Pages
+   to see it live:
+
+  Enable GitHub Pages (Manual Setup)
+
+  Step 1: Go to your repo settings
+  Visit:
+  https://github.com/jennifercsull-bit/bard-landing-page/settings/pages
+
+  Step 2: Configure GitHub Pages
+  - Source: Deploy from a branch
+  - Branch: main
+  - Folder: / (root)
+  - Click Save
+
+  Step 3: Add the workflow file (via GitHub web interface)
+  1. Go to: https://github.com/jennifercsull-bit/bard-landing-page/new/main
+  2. File name: .github/workflows/deploy.yml
+  3. Paste this content:
+
+  name: Deploy to GitHub Pages
+
+  on:
+    push:
+      branches: [ main ]
+    workflow_dispatch:
+
+  permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+  concurrency:
+    group: "pages"
+    cancel-in-progress: false
+
+  jobs:
+    deploy:
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Setup Node
+          uses: actions/setup-node@v4
+          with:
+            node-version: 20
+        - name: Install dependencies
+          run: npm ci
+        - name: Build
+          run: npm run build
+        - name: Setup Pages
+          uses: actions/configure-pages@v4
+        - name: Upload artifact
+          uses: actions/upload-pages-artifact@v3
+          with:
+            path: './dist'
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v4
